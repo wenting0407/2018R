@@ -174,7 +174,7 @@ hist(UScereal$sugars, breaks = 15)
 # 保存图片
 dev.print(png,file="file1.png",width=480,height=640)
 
-# 还原图形布局为单张图片
+# 还原图形布局为单张图片。mfrow:按照何种形式排布
 par(mfrow = c(1, 1)) 
 
 # 查看可选项
@@ -188,10 +188,10 @@ par("col")  # graphical parameters color
 # 生成两个向量
 cars <- c(1, 3, 6, 4, 9)
 trucks <- c(2, 5, 4, 5, 12)
-# 取得取值范围
+# 取得取值范围（求0，cars,trucks的极值）
 g_range <- range(0, cars, trucks)
 
-#作图，抑制坐标轴和标题
+#作图，抑制坐标轴和标题（ylim规定了取值范围）
 plot(cars, type="o", col="blue", ylim=g_range, 
      axes=FALSE, ann=FALSE)
 
@@ -216,7 +216,7 @@ title(main="Autos", col.main="red", font.main=4)
 title(xlab="Days", col.lab=rgb(0,0.5,0))
 title(ylab="Total", col.lab=rgb(0,0.5,0))
 
-# 图例设定 
+# 图例设定 (图例位置，图例文字，
 legend(1, g_range[2], c("cars","trucks"), cex=0.8, 
        col=c("blue","red"), pch=21:22, lty=1:2)
 
